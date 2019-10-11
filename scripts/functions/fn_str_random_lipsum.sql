@@ -72,7 +72,7 @@ CREATE FUNCTION str_random_lipsum(p_max_words SMALLINT
         END IF;
 
         IF p_start_with_lipsum = 1 THEN
-            SET v_result := CONCAT(v_result,'Lorem ipsum dolor sit amet.');
+            SET v_result := CONCAT(v_result,'Lorem ipsum dolor sit amet');
             SET v_max_words := v_max_words - 5;
         END IF;
 
@@ -94,9 +94,6 @@ CREATE FUNCTION str_random_lipsum(p_max_words SMALLINT
             END IF;
 
             IF v_sentence_end = 1 THEN
-                IF v_iter <> v_max_words THEN
-                    SET v_random_word := CONCAT(v_random_word, '.');
-                END IF;
                 SET v_sentence_lenght := FLOOR(9 + (RAND() * 7));
                 SET v_sentence_end := 0 ;
                 SET v_sentence_start := 1 ;
