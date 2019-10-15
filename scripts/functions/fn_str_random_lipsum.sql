@@ -88,7 +88,7 @@ CREATE FUNCTION str_random_lipsum(p_max_words SMALLINT
             END IF;
 
             IF v_sentence_start = 1 THEN
-                SET v_random_word := CONCAT(UPPER(SUBSTRING(v_random_word, 1, 1))
+                SET v_random_word := CONCAT(SUBSTRING(v_random_word, 1, 1)
                                             ,LOWER(SUBSTRING(v_random_word FROM 2)));
                 SET v_sentence_start := 0 ;
             END IF;
